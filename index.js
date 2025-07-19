@@ -15,7 +15,7 @@ app.post('/getValue', async (req, res) => {
         }
         for (const chunk of chunks) {
             const resp = await axios.get(
-                `https://catalog.roblox.com/v1/catalog/items/details?itemIds=${chunk.join(",")}`
+                `https://www.roblox.com/catalogitemIds=${chunk.join(",")}`
             );
             for (const item of resp.data.data) {
                 let price = item.price || item.lowestResalePrice || 0;

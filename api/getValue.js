@@ -1,4 +1,4 @@
-const axios = require("axios");
+import axios from "axios";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -22,9 +22,6 @@ export default async function handler(req, res) {
         details.push({ name: item.name, price, id: item.id });
       }
     }
-  } catch (e) {
-    // Ignore failed lookups
-  }
+  } catch (e) {}
   res.json({ total, details });
 }
-
